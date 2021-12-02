@@ -1,0 +1,24 @@
+<mat-sidenav-container class="example-container">
+    <mat-sidenav mode="side" opened>
+        <h1>Best Scores</h1>
+        <div *ngFor="let item of bestScoresArray; let i=index">
+            {{i+1}}: {{item.name}} {{item.score}}
+        </div>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div class="gamePageClass">
+            <h1>Welcome to the Memory Game</h1>
+            <h2>Player: {{name}}</h2>
+            <h3>Score:{{score}}</h3>
+            <button mat-button (click)="start()" mat-raised-button color="primary">Start</button>
+            <div class="line">
+                <div class="bubble" [class.blue]="highlight=='blue'" (click)="bubbleClick('blue')"></div>
+                <div class="bubble" [class.red]="highlight=='red'" (click)="bubbleClick('red')"></div>
+                <div class="bubble" [class.yellow]="highlight=='yellow'" (click)="bubbleClick('yellow')"></div>
+                <div class="bubble" [class.green]="highlight=='green'" (click)="bubbleClick('green')"></div>
+                <div class="bubble" [class.purple]="highlight=='purple'" (click)="bubbleClick('purple')"></div>
+                <div class="bubble" [class.cyan]="highlight=='cyan'" (click)="bubbleClick('cyan')"></div>
+            </div>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>
